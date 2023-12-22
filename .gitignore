@@ -6,7 +6,7 @@ share
 etc
 list.txt
 dataset
-model_development/models
+model_development/models/
 .env
 docker/models/
 docker/data/
