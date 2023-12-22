@@ -1,0 +1,14 @@
+bin
+include
+lib
+lib64
+share
+etc
+list.txt
+dataset
+model_development/models
+.env
+docker/models/
+docker/data/
+docker/Dockerfile
+docker/.env
