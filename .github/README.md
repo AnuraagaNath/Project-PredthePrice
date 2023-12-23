@@ -59,7 +59,9 @@ Run the project
 ```bash
   docker pull anuraaganath/pred-the-price:1.1.0
 ```
-
+```bash
+   docker container run -d -p 8000:5000 anuraaganath/pred-the-price:1.1.0
+```
 Check out the Docker Hub for updated versions of this project (if any)
 
 https://hub.docker.com/r/anuraaganath/pred-the-price/tags
