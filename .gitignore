@@ -12,8 +12,8 @@ docker/models/
 docker/data/
 docker/Dockerfile
 docker/.env
-train_image/image_data/*
-train_image/test_image/*
+train_image/image_data/
+train_image/test_image/
 train_image/bin/
 train_image/etc/
 train_image/include/
