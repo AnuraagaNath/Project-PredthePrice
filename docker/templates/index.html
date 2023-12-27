@@ -148,10 +148,53 @@
     </div>
 </div>
 
+<!-- Image recognition part -->
+
+<div class="container">
+    <p class="text-center fs-1" style="padding-top: 40px;">Check your car type</p>
+    <p class="text-center fs-7">(a ML model to classify your car images in Sedan, Pickup, Suv and Hatchback class)</p>
+    <p class="text-center fs-9">Cited dataset: Boonsirisumpun, Narong; surinta, olarik (2021), “Vehicle Type Image Dataset (Version 2): VTID2”, Mendeley Data, V2, doi: 10.17632/htsngg9tpc.2</p>
+    <form id='image' method="POST" action="/home" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="fileUpload" class="form-label">Drag and drop a file or click here to upload</label>
+            <input class="form-control" type="file" id="fileUpload" name="fileUpload">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-primary"><a href="home" style="text-decoration: none; color: white;">Reset</a></button>
+    </form>
+    {% if filename %}
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" class="rounded mx-auto d-block" style="max-width: 600px;" alt="Upload your picture">
+    <p class="fs-3 d-block mx-auto text-center">This is a {{ output }}</p>
+    {% endif %}
+</div>
+
+
+
+
 <p class="text-center fs-1" style="padding-top: 40px;">About Developer</p>
 <img src="{{ url_for('static', filename='img/Anuraaga_Nath_Image.png') }}"
     class="rounded-circle mx-auto mt-3 d-block rounded-0 border-info custom-image1" alt="...">
 <p class="text-center fs-4">Anuraaga Nath</p>
+
+<script>
+    window.onload = function () {
+
+        if (localStorage.getItem('scrollPosition')) {
+            window.scrollTo(0, localStorage.getItem('scrollPosition'));
+            localStorage.removeItem('scrollPosition');
+        }
+    }
+
+    document.getElementById('image').onsubmit = function () {
+        localStorage.setItem('scrollPosition', window.scrollY || window.pageYOffset);
+    }
+
+    // When the form is submitted
+    document.getElementById('image').onclick = function () {
+        localStorage.setItem('scrollPosition', window.scrollY || window.pageYOffset);
+    }
+
+</script>
 
 
 

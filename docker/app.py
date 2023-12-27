@@ -1,7 +1,12 @@
-from flask import Flask, render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request, session, send_from_directory
 import pandas as pd
 import numpy as np
 from dotenv import dotenv_values
+from werkzeug.utils import secure_filename
+import os
+import skops.io as sio
+from PIL import Image
+
 
 APP_SECRET = dotenv_values()
 
@@ -422,6 +427,41 @@ def getPrice():
 @app.route('/features')
 def features():
     return render_template('features.html')
+
+
+app.config['UPLOAD_FOLDER'] = './test/'
+@app.route('/home', methods=['POST'])
+def upload_file():
+    if 'fileUpload' not in request.files:
+        return 'No file part'
+    file = request.files['fileUpload']
+    if file.filename == '':
+        return 'No selected file'
+    if file:
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        model = sio.load('models/car_detection_model_svc.skops',trusted=True)
+        check = {0:'Hatchback', 1:'Pickup', 2:'Sedan', 3:'Suv'}
+        image = Image.open(filepath).convert("L")
+        resized_image = image.resize((36,36), Image.ADAPTIVE)
+        pixel_values = np.array(resized_image)
+        normalized_pixel_values = (pixel_values).reshape(-1) / 255
+        columns = [f'pixel_{i}' for i in range(1296)]
+        ndf = pd.DataFrame([normalized_pixel_values], columns=columns)
+        pred = model.predict(ndf)
+        output = check[pred[0]]
+        return render_template('index.html', filename=filename, output = output)
+        
+    return render_template('index.html')
+
+
+@app.route('/home/<filename>')
+def uploaded_file(filename):
+    render = send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    os.remove(filepath)
+    return render
 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port='5000', debug=True)
