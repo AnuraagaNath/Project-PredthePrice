@@ -8,6 +8,7 @@ import skops.io as sio
 from PIL import Image
 
 
+
 APP_SECRET = dotenv_values()
 
 app = Flask(__name__, template_folder='templates')
@@ -35,7 +36,7 @@ um_motorbike = "https://seeklogo.com/images/U/um-logo-92833D2706-seeklogo.com.pn
 
 hero_motorbike = "https://seeklogo.com/images/H/hero-logo-BED9024F3F-seeklogo.com.png"
 
-suzuki_motorbike = "https://seeklogo.com/images/S/Suzuki-logo-1298046A2E-seeklogo.com.png"
+suzuki_motorbike = "https://seeklogo.corm/images/S/Suzuki-logo-1298046A2E-seeklogo.com.png"
 
 husqvarna_motorbike = "https://seeklogo.com/images/H/Husqvarna-logo-D996C98848-seeklogo.com.png"
 
@@ -442,26 +443,27 @@ def upload_file():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
         model = sio.load('models/car_detection_model_svc.skops',trusted=True)
-        check = {0:'Hatchback', 1:'Pickup', 2:'Sedan', 3:'Suv'}
         image = Image.open(filepath).convert("L")
         resized_image = image.resize((36,36), Image.ADAPTIVE)
         pixel_values = np.array(resized_image)
         normalized_pixel_values = (pixel_values).reshape(-1) / 255
         columns = [f'pixel_{i}' for i in range(1296)]
         ndf = pd.DataFrame([normalized_pixel_values], columns=columns)
-        pred = model.predict(ndf)
-        output = check[pred[0]]
-        return render_template('index.html', filename=filename, output = output)
+        pred = model.predict_proba(ndf)
+        hatchback = round(pred[0][0]*100, 2)
+        pickup = round(pred[0][1]*100,2)
+        sedan = round(pred[0][2]*100,2)
+        suv = round(pred[0][3]*100,2)
+        os.remove(filepath)
+        return render_template('index.html',
+                               filename = filename,
+                               hatchback = hatchback, 
+                               pickup = pickup,
+                               sedan = sedan, 
+                               suv = suv)
         
     return render_template('index.html')
 
-
-@app.route('/home/<filename>')
-def uploaded_file(filename):
-    render = send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    os.remove(filepath)
-    return render
 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port='5000', debug=True)
