@@ -217,12 +217,12 @@ for indian_car_name, indian_car_logo in zip(indiancar_brands, indian_car_logos):
 def index():
     return redirect(url_for('home'))
 
-image = 'https://cdn.pixabay.com/photo/2023/07/30/11/51/automobile-8158723_1280.jpg'
+
 
 @app.route('/home')
 def home():
     session.clear()
-    return render_template('index.html', image=image)
+    return render_template('index.html')
 
 @app.route('/car')
 def car():

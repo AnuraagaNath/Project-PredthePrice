@@ -63,7 +63,8 @@
             <div class="col-md-8">
                 <p class="fs-5">Discover the world of resale price prediction with advanced models. This is a curated
                     collection that includes foreign luxury cars, popular Indian vehicles, and a range of bikes,
-                    including some luxurious options. The prediction models boast an impressive average accuracy score of 90%, ensuring reliable insights into the future resale value of your favorite rides.</p>
+                    including some luxurious options. The prediction models boast an impressive average accuracy score
+                    of 90%, ensuring reliable insights into the future resale value of your favorite rides.</p>
             </div>
         </div>
         <div class="row mt-4">
@@ -76,7 +77,8 @@
                 </ul>
             </div>
             <div class="col-md-6">
-                <img src="{{ image }}" class="custom-image1" alt="Project Image">
+                <img src="{{ url_for('static', filename='img/automobile-8158723_1280.webp') }}" class="custom-image1"
+                    alt="Project Image">
             </div>
         </div>
     </div>
@@ -159,36 +161,41 @@
             <label for="fileUpload" class="form-label">Click here to upload</label>
             <input class="form-control" type="file" id="fileUpload" name="fileUpload">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="reset" class="btn btn-primary"><a href="home"
+        <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+        <button id = "reset" type="reset" class="btn btn-primary"><a href="home"
                 style="text-decoration: none; color: white;">Reset</a></button>
     </form>
 
     {% if filename %}
     <p class="text-center fs-3" style="padding-top: 40px;">Your car looks like</p>
     <label class="fs-5" style="margin-top: 20px;">HatchBack</label>
-    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ hatchback }}" aria-valuemin="0"
-        aria-valuemax="100" style="height: 30px;">
-        <div id="hatchback" class="progress-bar progress-bar-striped progress-bar-animated bg-info text-dark fs-6" >{{ hatchback }}%</div>
+    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ hatchback }}"
+        aria-valuemin="0" aria-valuemax="100" style="height: 30px;">
+        <div id="hatchback" class="progress-bar progress-bar-striped progress-bar-animated bg-info text-dark fs-6">{{
+            hatchback }}%</div>
     </div>
 
     <label class="fs-5" style="margin-top: 20px;">Pickup</label>
-    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ pickup }}" aria-valuemin="0"
-        aria-valuemax="100" style="height: 30px;">
-        <div id="pickup" class="progress-bar progress-bar-striped progress-bar-animated bg-success text-dark fs-6" >{{ pickup }}%</div>
+    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ pickup }}"
+        aria-valuemin="0" aria-valuemax="100" style="height: 30px;">
+        <div id="pickup" class="progress-bar progress-bar-striped progress-bar-animated bg-success text-dark fs-6">{{
+            pickup }}%</div>
     </div>
 
     <label class="fs-5" style="margin-top: 20px;">Sedan</label>
-    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ sedan }}" aria-valuemin="0"
-        aria-valuemax="100" style="height: 30px;">
-        <div id="sedan" class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark fs-6">{{ sedan }}%</div>
+    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ sedan }}"
+        aria-valuemin="0" aria-valuemax="100" style="height: 30px;">
+        <div id="sedan" class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark fs-6">{{
+            sedan }}%</div>
     </div>
 
     <label class="fs-5" style="margin-top: 20px;">Suv</label>
-    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ suv }}" aria-valuemin="0"
-        aria-valuemax="100" style="height: 30px;">
-        <div id="suv" class="progress-bar progress-bar-striped progress-bar-animated bg-danger text-dark fs-6">{{ suv }}%</div>
+    <div class="progress" role="progressbar" aria-label="Warning striped example" aria-valuenow="{{ suv }}"
+        aria-valuemin="0" aria-valuemax="100" style="height: 30px;">
+        <div id="suv" class="progress-bar progress-bar-striped progress-bar-animated bg-danger text-dark fs-6">{{ suv
+            }}%</div>
     </div>
+
     {% endif %}
 </div>
 
@@ -201,29 +208,31 @@
 <p class="text-center fs-4">Anuraaga Nath</p>
 
 <script>
-    window.onload = function () {
+    var hatchbackElement = document.getElementById('hatchback');
+    var pickupElement = document.getElementById('pickup');
+    var sedanElement = document.getElementById('sedan');
+    var suvElement = document.getElementById('suv');
 
-        if (localStorage.getItem('scrollPosition')) {
-            window.scrollTo(0, localStorage.getItem('scrollPosition'));
-            localStorage.removeItem('scrollPosition');
-        }
+    if (hatchbackElement) {
+        hatchbackElement.style.width = "{{ hatchback }}%";
+        setTimeout(()=>{
+            document.getElementById("image").scrollIntoView();
+        }, 1000)
     }
-
-    document.getElementById('image').onsubmit = function () {
-        localStorage.setItem('scrollPosition', window.scrollY || window.pageYOffset);
+    
+    if (pickupElement) {
+        pickupElement.style.width = "{{ pickup }}%";
     }
-
-    // When the form is submitted
-    document.getElementById('image').onclick = function () {
-        localStorage.setItem('scrollPosition', window.scrollY || window.pageYOffset);
+    
+    if (sedanElement) {
+        sedanElement.style.width = "{{ sedan }}%";
     }
-
-    document.getElementById('hatchback').style.width = "{{ hatchback }}%";
-    document.getElementById('pickup').style.width = "{{ pickup }}%";
-    document.getElementById('sedan').style.width = "{{ sedan }}%";
-    document.getElementById('suv').style.width = "{{ suv }}%";
-
+    
+    if (suvElement) {
+        suvElement.style.width = "{{ suv }}%";
+    }      
 </script>
+
 
 
 
