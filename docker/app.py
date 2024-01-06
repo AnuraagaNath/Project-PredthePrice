@@ -36,7 +36,7 @@ um_motorbike = "https://seeklogo.com/images/U/um-logo-92833D2706-seeklogo.com.pn
 
 hero_motorbike = "https://seeklogo.com/images/H/hero-logo-BED9024F3F-seeklogo.com.png"
 
-suzuki_motorbike = "https://seeklogo.corm/images/S/Suzuki-logo-1298046A2E-seeklogo.com.png"
+suzuki_motorbike = "https://seeklogo.com/images/S/suzuki-logo-5311518DD9-seeklogo.com.png"
 
 husqvarna_motorbike = "https://seeklogo.com/images/H/Husqvarna-logo-D996C98848-seeklogo.com.png"
 
