@@ -57,10 +57,10 @@ In conclusion, "Project-PredthePrice" stands as a testament to the fusion of exp
 Run the project
 
 ```bash
-  docker pull anuraaganath/pred-the-price:1.2.0
+  docker pull anuraaganath/pred-the-price:1.2.1
 ```
 ```bash
-   docker container run -d -p 8000:5000 anuraaganath/pred-the-price:1.2.0
+   docker container run -d -p 8000:5000 anuraaganath/pred-the-price:1.2.1
 ```
 Check out the Docker Hub for updated versions of this project (if any)
 
