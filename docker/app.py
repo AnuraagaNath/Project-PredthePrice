@@ -442,7 +442,7 @@ def upload_file():
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        model = sio.load('models/car_detection_model_svc.skops',trusted=True)
+        model = sio.load('models/car_detection_model_svc_balanced.skops',trusted=True)
         image = Image.open(filepath).convert("L")
         resized_image = image.resize((36,36), Image.ADAPTIVE)
         pixel_values = np.array(resized_image)
