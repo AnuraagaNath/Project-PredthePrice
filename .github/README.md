@@ -24,7 +24,7 @@ A dataset named "Vehicle Type Image Dataset (Version 2): VTID2," consisting of a
 
 Boonsirisumpun, Narong; surinta, olarik (2021), “Vehicle Type Image Dataset (Version 2): VTID2”, Mendeley Data, V2, doi: 10.17632/htsngg9tpc.2
 
-The image training process involved using Support Vector Machines (SVM) with impressive accuracy rates of 99% for training and 98% for testing. The images were categorized into four types: "Hatchback," "Pickup," "SUV," and "Sedan." Prior to training, the images were converted to flattened 28 × 28 pixels and then used to fine-tune the model.
+The image training process involved using Support Vector Machines (SVM) with impressive accuracy rates of 99.8% for training and 99.3% for testing. The images were categorized into four types: "Hatchback," "Pickup," "SUV," and "Sedan." Prior to training, the images were converted to flattened 28 × 28 pixels and then used to fine-tune the model.
 
 The resulting model was integrated into a web application, which showcases the predicted class's probability. A notable feature of the web app is the inclusion of an animated progress bar that enhances the user interface, providing visual feedback on the prediction process.
 
