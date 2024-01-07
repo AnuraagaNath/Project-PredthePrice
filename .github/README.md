@@ -19,6 +19,15 @@ As a dedicated Masters student in Data Science, I present "Project-PredthePrice,
 4. **Impressive Prediction Scores:**
    - The predictive models employed in "Project-PredthePrice" boast consistently high accuracy scores, ranging between 80% and 96%. This reliability underscores the robustness of our analytical approach and the meticulous methodology applied in developing these models.
 
+**About the Car Type Detection Model**
+A dataset named "Vehicle Type Image Dataset (Version 2): VTID2," consisting of approximately 3000 images sourced from an open data repository, was utilized for training a model. The dataset citation is provided as:
+
+Boonsirisumpun, Narong; surinta, olarik (2021), “Vehicle Type Image Dataset (Version 2): VTID2”, Mendeley Data, V2, doi: 10.17632/htsngg9tpc.2
+
+The image training process involved using Support Vector Machines (SVM) with impressive accuracy rates of 99% for training and 98% for testing. The images were categorized into four types: "Hatchback," "Pickup," "SUV," and "Sedan." Prior to training, the images were converted to flattened 28 × 28 pixels and then used to fine-tune the model.
+
+The resulting model was integrated into a web application, which showcases the predicted class's probability. A notable feature of the web app is the inclusion of an animated progress bar that enhances the user interface, providing visual feedback on the prediction process.
+
 **Future Expansion:**
 As the project evolves, I envision its expansion to include additional commodities beyond cars and bikes. This strategic roadmap aligns with my commitment to continuous improvement and adaptability to emerging data science challenges. Also, the data will be live scrapped from websites for more relevancy.
 
