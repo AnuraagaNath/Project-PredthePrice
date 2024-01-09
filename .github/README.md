@@ -17,7 +17,7 @@ As a dedicated Masters student in Data Science, I present "Project-PredthePrice,
    - Beyond cars, our project provides a holistic perspective by delving into the resale price prediction for both Indian bikes and luxury motorcycles. This dual focus expands the utility of our models to cater to a broader audience.
 
 4. **Impressive Prediction Scores:**
-   - The predictive models employed in "Project-PredthePrice" boast consistently high accuracy scores, ranging between 80% and 96%. This reliability underscores the robustness of our analytical approach and the meticulous methodology applied in developing these models.
+   - The predictive models employed in "Project-PredthePrice" boast consistently high r2 scores, approximate average of 0.9. This reliability underscores the robustness of our analytical approach and the meticulous methodology applied in developing these models.
 
 **About the Car Type Detection Model**
 A dataset named "Vehicle Type Image Dataset (Version 2): VTID2," consisting of approximately 3000 images sourced from an open data repository, was utilized for training a model. The dataset citation is provided as:
