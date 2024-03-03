@@ -1,6 +1,10 @@
 
 # Project PredthePrice
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://project-predtheprice.streamlit.app/)
+
+
+
 **Project Description: "Project-PredthePrice"**
 
 As a dedicated Masters student in Data Science, I present "Project-PredthePrice," a meticulously crafted solo endeavor focused on the domain of resale price prediction for automobiles, specifically catering to cars and bikes. This project is characterized by a commitment to precision, data-driven insights, and a comprehensive scope that encompasses both foreign luxury cars and vehicles available in India.
@@ -58,7 +62,9 @@ In conclusion, "Project-PredthePrice" stands as a testament to the fusion of exp
 
 ![Demo Part 1](https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/b3c8cd0c-be67-465c-b9f0-6c610b81f171)
 
+https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/bd7edfd4-00ee-4f3d-96a7-5111231d7939
 
+## Streamlit Preview
 ![Demo Part 2](https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/e9476e06-0e44-4ae4-922a-51b99f24841f)
 
 ## Run Locally
