@@ -29,7 +29,7 @@ filepath = images[selected_image]
 
 st.image(filepath, width=300)
 
-model = sio.load('./models/car_detection_model_svc_balanced.skops',trusted=True)
+model = sio.load('streamlit_app/models/car_detection_model_svc_balanced.skops',trusted=True)
 
 if st.button('Predict Car Type'):
 
