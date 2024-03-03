@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import skops.io as sio
-
+from joblib import load
 
 st.set_page_config(
     page_title='Luxury Cars',
@@ -9,7 +9,7 @@ st.set_page_config(
 )
 st.title('🚗 Foreign Luxury Cars')
 
-fcars = pd.read_pickle('/home/anuraaga/Documents/Projects/Project-PredthePrice/docker/data/german_car.pkl')
+fcars = pd.read_pickle('data/german_car.pkl')
 
 fcars_brands = fcars['brand'].unique()
 selected_brand = st.selectbox('Select Car Brand', options=fcars_brands)
@@ -23,7 +23,7 @@ fcar_fuel = st.selectbox('Select Fuel Type', options=fcar_filtered[fcar_filtered
 fcar_rd = st.selectbox('Select Not Repaired Damage (0 for No and 1 for Yes)', options=fcar_filtered['notRepairedDamage'].unique())
 
 if st.button('Predict Price'):
-    pipe = sio.load('/home/anuraaga/Documents/Projects/Project-PredthePrice/docker/models/carmodel.skops', trusted=True)
+    pipe = load('models/carmodel_compressed.joblib')
     price = pipe.predict(pd.DataFrame([[fcar_name, fcar_vehicleType, fcar_yor, fcar_gearbox, fcar_km, fcar_fuel, selected_brand, fcar_rd]], columns=fcars.columns[:-1]))[0]
     st.balloons()
     st.success(f'The price will range between {price-(price*0.2)} to {price+(price*0.2)} INR')

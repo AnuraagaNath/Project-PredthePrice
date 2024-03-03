@@ -10,7 +10,7 @@ st.set_page_config(
 
 st.title('🏍️ Indian Motorcycles')
 
-imcs = pd.read_pickle('/home/anuraaga/Documents/Projects/Project-PredthePrice/docker/data/bikes_v4.pkl')
+imcs = pd.read_pickle('data/bikes_v4.pkl')
 
 imcs_brands = imcs['model'].unique()
 selected_brand = st.selectbox('Select Car Brand', options=imcs_brands)
@@ -22,7 +22,7 @@ imc_km = st.number_input('Select Kilometer')
 imc_mileage = st.selectbox('Select Mileage', options=imc_filtered[imc_filtered['name']==imc_name]['mileage(kmpl)'].unique())
 
 if st.button('Predict Price'):
-    pipe = sio.load('/home/anuraaga/Documents/Projects/Project-PredthePrice/docker/models/indianbikemodel_pipeline.skops',trusted=True)
+    pipe = sio.load('models/indianbikemodel_pipeline.skops',trusted=True)
     price = pipe.predict(pd.DataFrame([[imc_year,imc_owner,imc_name, selected_brand, imc_km, imc_mileage]], columns=['model_year', 'owner', 'name', 'model', 'km_driven', 'mileage(kmpl)']))[0]
     st.balloons()
     st.success(f'The price will range between {np.ceil(((price)**2-(((price)**2)*0.2)))} to {np.ceil(((price)**2+(((price)**2)*0.2)))} INR')

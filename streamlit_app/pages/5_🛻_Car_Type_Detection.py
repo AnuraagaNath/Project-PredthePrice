@@ -29,7 +29,7 @@ filepath = images[selected_image]
 
 st.image(filepath, width=300)
 
-model = sio.load('/home/anuraaga/Documents/Projects/Project-PredthePrice/docker/models/car_detection_model_svc_balanced.skops',trusted=True)
+model = sio.load('models/car_detection_model_svc_balanced.skops',trusted=True)
 
 if st.button('Predict Car Type'):
 
