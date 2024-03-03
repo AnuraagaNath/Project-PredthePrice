@@ -15,7 +15,7 @@ imcs = pd.read_pickle('streamlit_app/data/bikes_v4.pkl')
 imcs_brands = imcs['model'].unique()
 selected_brand = st.selectbox('Select Car Brand', options=imcs_brands)
 imc_filtered = imcs[imcs['model'] == selected_brand]
-imc_year = st.slider('Select Year of Registration', min_value=1950, max_value=2024, value=2000, step=1)
+imc_year = st.slider('Select Year of Registration', min_value=2000, max_value=2024, value=2010, step=1)
 imc_owner = st.selectbox('Select Owner Type', options=imc_filtered['owner'].unique())
 imc_name = st.selectbox('Select Motorcycle Name', options=imc_filtered['name'].unique())
 imc_km = st.number_input('Select Kilometer')

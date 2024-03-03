@@ -16,7 +16,7 @@ selected_brand = st.selectbox('Select Car Brand', options=fcars_brands)
 fcar_filtered = fcars[fcars['brand'] == selected_brand]
 fcar_name = st.selectbox('Select Car Name', options=fcar_filtered['name'].unique())
 fcar_vehicleType = st.selectbox('Select Vehicle Type', options=fcar_filtered[fcar_filtered['name']==fcar_name]['vehicleType'].unique())
-fcar_yor = st.slider('Select Year of Registration', min_value=1950, max_value=2024, value=2000, step=1)
+fcar_yor = st.slider('Select Year of Registration', min_value=2000, max_value=2024, value=2010, step=1)
 fcar_gearbox = st.selectbox('Select Gearbox', options=fcar_filtered[fcar_filtered['name']==fcar_name]['gearbox'].unique())
 fcar_km = st.number_input('Select Kilometer')
 fcar_fuel = st.selectbox('Select Fuel Type', options=fcar_filtered[fcar_filtered['name']==fcar_name]['fuelType'].unique())

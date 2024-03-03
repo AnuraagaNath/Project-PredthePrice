@@ -14,7 +14,7 @@ icars_brands = icars['company'].unique()
 selected_brand = st.selectbox('Select Car Brand', options=icars_brands)
 icar_filtered = icars[icars['company'] == selected_brand]
 icar_name = st.selectbox('Select Car Name', options=icar_filtered['name'].unique())
-icar_year = st.slider('Select Year of Registration', min_value=1950, max_value=2024, value=2000, step=1)
+icar_year = st.slider('Select Year of Registration', min_value=2000, max_value=2024, value=2010, step=1)
 icar_km = st.number_input('Select Kilometer')
 icar_fuel = st.selectbox('Select Fuel Type', options=icar_filtered[icar_filtered['name']==icar_name]['fuel_type'].unique())
 
