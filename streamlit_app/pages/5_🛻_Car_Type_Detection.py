@@ -12,14 +12,14 @@ st.set_page_config(
 st.title('🛻 Car Type Detection by Images')
 
 images = {
-    'Test Image 1': '/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/Hatchback/PHOTO_3.jpg',
-    'Test Image 2': '/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/Hatchback/PHOTO_9.jpg',
-    'Test Image 3': '/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/Pickup/PHOTO_6.jpg',
-    'Test Image 4': '/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/Pickup/PHOTO_24.jpg',
-    'Test Image 5': '/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/Seden/PHOTO_5.jpg',
-    'Test Image 6': '/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/Seden/PHOTO_12.jpg',
-    'Test Image 7':'/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/SUV/PHOTO_8.jpg',
-    'Test Image 8':'/home/anuraaga/Documents/Projects/Project-PredthePrice/train_image/test_image/SUV/PHOTO_14.jpg'
+    'Test Image 1': 'streamlit_app/images/image1.jpg',
+    'Test Image 2': 'streamlit_app/images/image2.jpg',
+    'Test Image 3': 'streamlit_app/images/image3.jpg',
+    'Test Image 4': 'streamlit_app/images/image4.jpg',
+    'Test Image 5': 'streamlit_app/images/image5.jpg',
+    'Test Image 6': 'streamlit_app/images/image6.jpg',
+    'Test Image 7': 'streamlit_app/images/image7.jpg',
+    'Test Image 8': 'streamlit_app/images/image8.jpg'
     
 }
 
