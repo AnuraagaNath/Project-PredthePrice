@@ -44,6 +44,7 @@ if st.button('Predict Car Type'):
     pickup = pred[1]
     sedan = pred[2]
     suv = pred[3]
+    st.balloons()
     st.text(f'Hatchback: {round(hatchback*100, 2)}%')
     st.progress(hatchback)
     st.text(f'Pickup: {round(pickup*100, 2)}%')
