@@ -62,10 +62,11 @@ In conclusion, "Project-PredthePrice" stands as a testament to the fusion of exp
 
 ![Demo Part 1](https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/b3c8cd0c-be67-465c-b9f0-6c610b81f171)
 
-https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/bd7edfd4-00ee-4f3d-96a7-5111231d7939
+
+![Demo Part 2](https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/e9476e06-0e44-4ae4-922a-51b99f24841f)
 
 ## Streamlit Preview
-![Demo Part 2](https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/e9476e06-0e44-4ae4-922a-51b99f24841f)
+https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/bd7edfd4-00ee-4f3d-96a7-5111231d7939
 
 ## Run Locally
 
