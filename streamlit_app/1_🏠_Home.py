@@ -37,9 +37,6 @@ st.markdown('To get in touch, please contact at: [anuraaga.oct15@gmail.com](http
 
 
 
-import streamlit as st
-
-
 st.markdown(
     """
     <footer>

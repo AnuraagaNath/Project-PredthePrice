@@ -23,6 +23,15 @@ images = {
     'Test Image 7': 'streamlit_app/images/image7.jpg',
     'Test Image 8': 'streamlit_app/images/image8.jpg',
     'Test Image 9': 'streamlit_app/images/image9.jpg',
+    'Test Image 10': 'streamlit_app/images/image10.jpg',
+    'Test Image 11': 'streamlit_app/images/image11.jpg',
+    'Test Image 12': 'streamlit_app/images/image12.jpg',
+    'Test Image 13': 'streamlit_app/images/image13.jpg',
+    'Test Image 14': 'streamlit_app/images/image14.jpg',
+    'Test Image 15': 'streamlit_app/images/image15.jpg',
+    'Test Image 16': 'streamlit_app/images/image16.jpg',
+    'Test Image 17': 'streamlit_app/images/image17.jpg',
+    'Test Image 18': 'streamlit_app/images/image18.jpg',
     
 }
 
