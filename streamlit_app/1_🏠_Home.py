@@ -24,7 +24,7 @@ df = pd.DataFrame()
 df['Prediction Model'] = ['Luxury Car', 'Indian Car', 'Indian Motorcycle', 'Image Classifier']
 df['Model Used'] = ['XGB Regressor', 'XGB Regressor', 'XGB Regressor', 'CNN']
 df['Training Score (R-Sqaured/Accuracy)'] = [0.8100, 0.9692, 0.941, 0.9994]
-df['Testing Score (R-Sqaured/Accuracy)'] = [0.8039, 0.8905, 0.9121, 0.9980]
+df['Testing Score (R-Sqaured/Accuracy)'] = [0.8039, 0.8905, 0.9121, 0.9953]
 
 st.table(df)
 
