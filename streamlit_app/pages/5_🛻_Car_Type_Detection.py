@@ -1,8 +1,10 @@
 import streamlit as st
-import skops.io as sio
-from PIL import Image
+# import skops.io as sio
+# from PIL import Image
 import pandas as pd
 import numpy as np
+from tensorflow.keras import models
+import cv2
 
 st.set_page_config(
     page_title='Car Type Detection',
@@ -29,27 +31,36 @@ filepath = images[selected_image]
 
 st.image(filepath, width=300)
 
-model = sio.load('streamlit_app/models/car_detection_model_svc_balanced.skops',trusted=True)
+# model = sio.load('streamlit_app/models/car_detection_model_svc_balanced.skops',trusted=True)
+model = models.load_model('streamlit_app/models/predtheprice_cnn.keras')
+
+def imgtoarr(path):
+    img = cv2.imread(path, 0)
+    img = cv2.resize(img, (64, 64))
+    img_array = np.expand_dims(img, axis=-1)
+    return img_array, img_array.reshape(1, 64, 64, 1)
 
 if st.button('Predict Car Type'):
 
-    image = Image.open(filepath).convert("L")
-    resized_image = image.resize((36,36), Image.ADAPTIVE)
-    pixel_values = np.array(resized_image)
-    normalized_pixel_values = (pixel_values).reshape(-1) / 255
-    columns = [f'pixel_{i}' for i in range(1296)]
-    ndf = pd.DataFrame([normalized_pixel_values], columns=columns)
-    pred = model.predict_proba(ndf)[0]
+    # image = Image.open(filepath).convert("L")
+    # resized_image = image.resize((36,36), Image.ADAPTIVE)
+    # pixel_values = np.array(resized_image)
+    # normalized_pixel_values = (pixel_values).reshape(-1) / 255
+    # columns = [f'pixel_{i}' for i in range(1296)]
+    # ndf = pd.DataFrame([normalized_pixel_values], columns=columns)
+    _, test_image = imgtoarr(filepath)
+    # pred = model.predict_proba(ndf)[0]
+    pred = model.predict(test_image)[0]
     hatchback = pred[0]
     pickup = pred[1]
-    sedan = pred[2]
-    suv = pred[3]
+    suv = pred[2]
+    sedan = pred[3]
     st.balloons()
     st.text(f'Hatchback: {round(hatchback*100, 2)}%')
     st.progress(hatchback)
     st.text(f'Pickup: {round(pickup*100, 2)}%')
     st.progress(pickup)
-    st.text(f'Sedan: {round(sedan*100, 2)}%')
-    st.progress(sedan)
     st.text(f'SUV: {round(suv*100, 2)}%')
     st.progress(suv)
+    st.text(f'Sedan: {round(sedan*100, 2)}%')
+    st.progress(sedan)
