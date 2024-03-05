@@ -12,6 +12,7 @@ st.set_page_config(
 )
 
 st.title('🛻 Car Type Detection by Images')
+st.subheader('Citation of the Image data used: Boonsirisumpun, Narong; surinta, olarik (2021), “Vehicle Type Image Dataset (Version 2): VTID2”, Mendeley Data, V2, doi: 10.17632/htsngg9tpc.2')
 
 images = {
     'Test Image 1': 'streamlit_app/images/image1.jpg',
@@ -77,5 +78,3 @@ if st.button('Predict Car Type'):
 
 
 
-
-st.subheader('Citation of the Image data used: Boonsirisumpun, Narong; surinta, olarik (2021), “Vehicle Type Image Dataset (Version 2): VTID2”, Mendeley Data, V2, doi: 10.17632/htsngg9tpc.2')
