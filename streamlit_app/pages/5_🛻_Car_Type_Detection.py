@@ -21,7 +21,8 @@ images = {
     'Test Image 5': 'streamlit_app/images/image5.jpg',
     'Test Image 6': 'streamlit_app/images/image6.jpg',
     'Test Image 7': 'streamlit_app/images/image7.jpg',
-    'Test Image 8': 'streamlit_app/images/image8.jpg'
+    'Test Image 8': 'streamlit_app/images/image8.jpg',
+    'Test Image 9': 'streamlit_app/images/image9.jpg',
     
 }
 
