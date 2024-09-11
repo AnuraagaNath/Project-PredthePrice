@@ -73,10 +73,10 @@ https://github.com/AnuraagaNath/Project-PredthePrice/assets/114306656/bd7edfd4-0
 Run the project
 
 ```bash
-  docker pull anuraaganath/pred-the-price:1.2.1
+  docker pull anuraaganath/pred-the-price:1.2.2
 ```
 ```bash
-   docker container run -d -p 8000:5000 anuraaganath/pred-the-price:1.2.1
+   docker container run -d -p 8000:5000 anuraaganath/pred-the-price:1.2.2
 ```
 Check out the Docker Hub for updated versions of this project (if any)
 
